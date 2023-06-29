@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "./page.module.scss";
+import MovieCont from "@/components/movie/MovieCont";
+import ContTitle from "@/components/title/ContTitle";
 const Movie = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
@@ -17,6 +18,11 @@ const Movie = () => {
     getData();
   }, []);
   console.log(movies);
-  return <div className={styles.cont}>Movie</div>;
+  return (
+    <>
+      <ContTitle title="movie" />
+      <MovieCont movies={movies} />
+    </>
+  );
 };
 export default Movie;
